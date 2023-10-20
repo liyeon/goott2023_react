@@ -1,22 +1,23 @@
 import React from 'react';
 import './ExpenseItem.css';
+import './ExpenseDate.css';
 function ExpenseItem(props) {
 
     // let title='Car Insurencess'
     const month = props.date.toLocaleString('en-US',{month:'long'})
     const year=props.date.getFullYear();
-    const day=props.toLocaleString('en-US',{day:'2-digit'});
+    const day=props.date.toLocaleString('en-US',{day:'2-digit'});
         return (
             <div className='expense-item'>
                 {/* <div>{props.date.toISOString()}</div> */}
-                <div>
-                    <div>
+                <div className='expense-date'>
+                    <div className='expense-date__year'>
                         {year}
                     </div>
-                    <div>
+                    <div className='expense-date__month'>
                         {month}
                     </div>
-                    <div>
+                    <div className='expense-date__day'>
                         {day}
                     </div>
                 </div>
